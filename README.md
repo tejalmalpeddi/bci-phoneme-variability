@@ -1,13 +1,13 @@
-# Phoneme Variability in Speech BCI Neural Dynamics
+# Phoneme Variability in Speech Brain Computer Interfaces Neural Dynamics
 
-**🥈 2nd Place — Best Engineering** · Brain–Computer Interface Hackathon, UC San Diego (Data Science & Neuroscience) × University of Michigan (Biomedical Engineering), Fall 2025
+**2nd Place — Best Engineering** · Brain–Computer Interface Hackathon, UC San Diego (Data Science & Neuroscience) × University of Michigan (Biomedical Engineering), Fall 2025
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YOUR-USERNAME/bci-phoneme-variability/blob/main/phoneme_variability.ipynb)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 
-> When someone with paralysis attempts the same sound over and over, how consistent is the activity in their motor cortex, and which sounds are hardest for a speech decoder to pin down?
+When someone with paralysis attempts the same sound over and over, how consistent is the activity in their motor cortex, and which sounds are hardest for a speech decoder to correctly pin down?
 
-Intracortical speech brain–computer interfaces (BCIs) turn neural activity into text. They mostly fail on phonemes whose neural signature changes from one attempt to the next. This project measures that **trial-to-trial variability for each phoneme**. It uses low-dimensional neural trajectories from Gaussian Process Factor Analysis (GPFA) and multidimensional Dynamic Time Warping (DTW) to find which phonemes are least consistent, which latent dimensions carry the variability, and how much of it is just differences in speaking speed.
+Intracortical speech brain–computer interfaces (BCIs) turn neural activity into text. They mostly fail on phonemes whose neural signature changes from one attempt to the next. This project measures the **trial-to-trial variability for each phoneme**. It uses low-dimensional neural trajectories from Gaussian Process Factor Analysis (GPFA) and multidimensional Dynamic Time Warping (DTW) to find which phonemes are least consistent, which latent dimensions carry the variability, and how much of it is just differences in speaking speed.
 
 ## Highlights
 
@@ -45,7 +45,7 @@ Repeated attempts of the same phoneme (`Bah`, latent dimension 2) follow the sam
 
 <p align="center"><img src="figures/bah_raw_trials_dim2.png" width="420"></p>
 
-## Why it matters for decoders
+## Why it matters for BCI decoders
 
 - **Where to focus data collection.** High-variability phonemes are the most likely to be confused. They would benefit most from extra training trials or targeted augmentation.
 - **Compact decoder inputs.** Because variability sits in a few leading dimensions, low-dimensional latent inputs and dimension-specific regularization make sense.
@@ -54,15 +54,15 @@ Repeated attempts of the same phoneme (`Bah`, latent dimension 2) follow the sam
 ## Repository
 
 ```
-├── phoneme_variability.ipynb   # full, narrated analysis
-├── figures/                    # key figures used above
+├── phoneme_variability.ipynb   
+├── figures/                    
 ├── requirements.txt
 └── README.md
 ```
 
 ## Running it
 
-The notebook downloads the public hackathon data (GPFA factors and cue labels, about 2 minutes) on first run. No Google Drive or local data is needed.
+The notebook downloads public hackathon data (GPFA factors and cue labels) on first run. 
 
 - **Colab:** click the badge above, then *Runtime → Run all*.
 - **Locally:**
@@ -70,10 +70,6 @@ The notebook downloads the public hackathon data (GPFA factors and cue labels, a
   pip install -r requirements.txt
   jupyter notebook phoneme_variability.ipynb
   ```
-
-## Team
-
-Team **Jawdroppers**: Tejal Malpeddi, *[add teammates]*
 
 ## References
 
